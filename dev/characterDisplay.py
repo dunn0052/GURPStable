@@ -1,14 +1,16 @@
 from tkinter import *
 from GURPSCharacter import *
 
-class Window(Frame):
+class CWindow(Frame):
     def __init__(self, master=None):
         Frame.__init__(self, master)
-        self.initWindow()
+        self.CinitWindow()
+   
 
-    def initWindow(self, name = None):
+    def CinitWindow(self, name = None):
         #Player Data
-        self.player = GURPSCharacter(name = "test")
+        self.name = "test"
+        self.player = GURPSCharacter(name = self.name)
 
         #set title
         self.title = self.player.fluff["Name"][0] + " - " + self.player.fluff["Player"][0]
@@ -16,66 +18,48 @@ class Window(Frame):
         self.displayCharacter()
         
     # format stat item
-    def displayStat(self, stat, value, grid_row, grid_column, justification = "nw", bg_color = None):
-        Label(root, text = stat + ": " + str(value), anchor = justification, bg = bg_color).grid(row = grid_row, column = grid_column)
+    def displayStat(self, stat, value, grid_row, grid_column, justification = "nw", bg_color = None, font = None):
+        Label(self.master, text = stat + ": " + str(value), anchor = justification, bg = bg_color, font = font).grid(row = grid_row, column = grid_column)
 
     def displayCharacter(self):
         p = self.player.stat
         # directed display because dictionaries have no set order
-        self.displayStat("ST", p["ST"][0], 0, 0)
-        self.displayStat("DX", p["DX"][0], 1, 0)
-        self.displayStat("IQ", p["IQ"][0], 2, 0)
-        self.displayStat("HT", p["HT"][0], 3, 0)
-        self.displayStat("HP", p["ST"][0], 0, 1)
-        self.displayStat("WILL", p["ST"][0], 1, 1)
-        self.displayStat("PER", p["ST"][0], 2, 1)
-        self.displayStat("FP", p["ST"][0], 3, 1)
+        self.displayStat("ST", p["ST"][0], 0, 1)
+        self.displayStat("DX", p["DX"][0], 1, 1)
+        self.displayStat("IQ", p["IQ"][0], 2, 1)
+        self.displayStat("HT", p["HT"][0], 3, 1)
+        self.displayStat("HP", p["ST"][0], 0, 2)
+        self.displayStat("WILL", p["ST"][0], 1, 2)
+        self.displayStat("PER", p["ST"][0], 2, 2)
+        self.displayStat("FP", p["ST"][0], 3, 2)
 
-        self.displayStat("Name", self.player.fluff["Name"][0], 0, 2)
-        self.displayStat("Player", self.player.fluff["Player"][0], 1, 2)
+        self.displayStat("Name", self.player.fluff["Name"][0], 0, 0, font = "bold")
+        self.displayStat("Player", self.player.fluff["Player"][0], 1, 0, font = "bold")
         
-        Label(root, text = "Advantages and Perks").grid(row=4, column=0)
+        Label(self.master, text = "Advantages and Perks", font = "bold").grid(row=4, column=0)
         adv_offset = self.displayAllStat(row = 5, column = 0, dictionary = self.player.advantage)
-        perk_offset = self.displayAllStat(row = 5 + adv_offset, column = 0, dictionary = self.player.perk)
-        Label(root, text = "Disadvantages and Quirks").grid(row=5 + perk_offset, column=0)
-        dis_offset = self.displayAllStat(row = 5 + perk_offset, column = 0, dictionary = self.player.disadvantage)
-        self.displayAllStat(row = 5 + dis_offset, column = 0, dictionary = self.player.quirk)
+        perk_offset = self.displayAllStat(row = 5, column = 0, dictionary = self.player.perk, offset = adv_offset)
+        Label(self.master, text = "Disadvantages and Quirks", font = "bold").grid(row=5+ perk_offset, column=0)
+        dis_offset = self.displayAllStat(row = 6, column = 0, dictionary = self.player.disadvantage, offset = perk_offset)
+        self.displayAllStat(row = 6, column = 0, dictionary = self.player.quirk, offset = dis_offset)
 
-        Label(root, text = "Skills").grid(row = 4, column = 1)
+        Label(self.master, text = "Skills", font = "bold").grid(row = 4, column = 1)
         self.displayAllStat(row = 5, column = 1, dictionary = self.player.skill)
 
-        Label(root, text = "Weapons and Armor").grid(row = 4, column = 2)
-        self.displayAllStat(row = 5, column = 1, dictionary = self.player.weapon)
-        self.displayAllStat(row = 5, column = 1, dictionary = self.player.armor)
+        Label(self.master, text = "Weapons, Armor, and Items", font = "bold").grid(row = 4, column = 2)
+        wpn_offset = self.displayAllStat(row = 5, column = 2, dictionary = self.player.weapon)
+        arm_offset =self.displayAllStat(row = 5, column = 2, dictionary = self.player.armor, offset = wpn_offset)
+        self.displayAllStat(row = 5, column = 2, dictionary = self.player.item, offset = arm_offset)
         
-    def displayAllStat(self, row, column, dictionary):
-        offset = 0
+    def displayAllStat(self, row, column, dictionary, offset = 0, font = None):
+        offset = offset
         for item in dictionary:
-            self.displayStat(text = item).grid(row = row + offset, column = column)
+            Label(self.master, text = item).grid(row = row + offset, column = column, font = font)
             offset +=1
         return offset
-        
-##        work best for GM control
-##        menu = Menu(root)
-##        root.config(menu=menu)
-##        filemenu = Menu(menu)
-##        menu.add_cascade(label="File", menu=filemenu)
-##        filemenu.add_command(label="New", command=None)
-##        filemenu.add_command(label="Open", command=None)
-##        filemenu.add_command(label="Save", command=None)
-##        filemenu.add_separator()
-##        filemenu.add_command(label="Exit", command=self.client_exit)
-##
-##        helpmenu = Menu(menu)
-##        menu.add_cascade(label="Help", menu=helpmenu)
-##        helpmenu.add_command(label="About...", command=None)
-##
-##
-##    def client_exit(self):
-##        self.master.destroy()
-##        #exit()
-        
-#begin window 
-root = Tk()
-app = Window(master=root)
-root.mainloop()
+
+#begin window
+def runCWindow(root = None):
+    Croot = root
+    app = CWindow(master=Croot)
+    root.mainloop()
