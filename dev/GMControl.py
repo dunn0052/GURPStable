@@ -21,11 +21,16 @@ class GMWindow(Frame):
 
         partymenu = Menu(menu)
         menu.add_cascade(label="Party", menu=partymenu)
-        partymenu.add_command(label="Add Member", command=self.AddMember)
-        partymenu.add_command(label="Display Party", command=self.DisplayParty)
-        partymenu.add_command(label="New", command=self.NewParty)
+        partymenu.add_command(label="Add Member", command=self.addMember)
+        partymenu.add_command(label="Display Party", command=self.displayParty)
+        partymenu.add_command(label="New", command=self.newParty)
         partymenu.add_command(label="Open", command=None)
         partymenu.add_command(label="Save", command=None)
+
+        battlemenu = Menu(menu)
+        menu.add_cascade(label="Battle", menu=battlemenu)
+        battlemenu.add_command(label="New Battle", command=None)
+        battlemenu.add_command(label="Begin Battle", command=None)
 
         helpmenu = Menu(menu)
         menu.add_cascade(label="Help", menu=helpmenu)
@@ -39,15 +44,18 @@ class GMWindow(Frame):
         #exit()
 
     # party controls
-    def NewParty(self):
+    def newParty(self):
         self.party = []
 
-    def AddMember(self):
+    def addMember(self):
         self.load_window_f()
         
-    def DisplayParty(self):
-        runCWindow(Tk())
+    def removeMember(self):
         return
+        
+    def displayParty(self):
+        for player in self.party:
+            runCWindow(Tk(), player.fluff["Name"][0])
     
 
     #Window Functions
@@ -81,6 +89,7 @@ class GMWindow(Frame):
                 self.error_ok_button = Button(self.error_window, text = "Ok", command=lambda: self.error_window.withdraw() or window.withdraw()).grid(row=1,column=0)
                 # black magic -- or runs each function to determine any is true
 
+    #clears original window of any widgets
     def reset_root(self, bg_keep = False):
         list = root.grid_slaves()
         for l in list:

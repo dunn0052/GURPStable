@@ -2,20 +2,22 @@ from tkinter import *
 from GURPSCharacter import *
 
 class CWindow(Frame):
-    def __init__(self, master=None):
+    name = ""
+    def __init__(self, master=None, name = ""):
+        self.name = name
         Frame.__init__(self, master)
         self.CinitWindow()
-   
+       
 
-    def CinitWindow(self, name = None):
+    def CinitWindow(self):
         #Player Data
-        self.name = "test"
         self.player = GURPSCharacter(name = self.name)
 
         #set title
         self.title = self.player.fluff["Name"][0] + " - " + self.player.fluff["Player"][0]
         self.master.title(self.title)
         self.displayCharacter()
+        
         
     # format stat item
     def displayStat(self, stat, value, grid_row, grid_column, justification = "nw", bg_color = None, font = None):
@@ -59,7 +61,6 @@ class CWindow(Frame):
         return offset
 
 #begin window
-def runCWindow(root = None):
-    Croot = root
-    app = CWindow(master=Croot)
-    root.mainloop()
+def runCWindow(Croot = None, name = None):
+    app = CWindow(master=Croot, name = name)
+    Croot.mainloop()
