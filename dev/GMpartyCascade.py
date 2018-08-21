@@ -9,6 +9,7 @@ from tkinter import *
 
 # party controls
 def newParty(app):
+    #clears party ?
     app.party = []
 
 def addMember(window, app):
@@ -18,8 +19,10 @@ def removeMember(window):
     return
     
 def displayParty(window, app):
+    # bug or feature? Party members must have unique names?
+    # each Tk() instance might have to be a seperate reference -- prob not
     for player in app.party:
-        runCWindow(Tk(), player.fluff["Name"][0])
+        runCWindow(Tk(), character = player)
 
 
 #Window Functions
@@ -36,7 +39,8 @@ def load_char(window,app, name = None):
     window.load_window.transient(window)
     #self.reset_root(bg_keep = True)
     try:
-        Member = GURPSCharacter(name = str(window.load_window_entry.get()))
+        Member = GURPSCharacter()
+        Member.loadCharacter(name = str(window.load_window_entry.get()))
         app.party.append(Member)
     except:
         error_window_popup(root = window, window = window.load_window, error_message = ("Could not find " + window.load_window_entry.get()))

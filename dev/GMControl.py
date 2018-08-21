@@ -1,3 +1,7 @@
+# GM control window
+# app => GM window reference for items, party, encounters etc...
+# self.master Tk() object for window reference
+
 from characterDisplay import *
 from GURPSCharacter import GURPSCharacter
 from tkinter import *
@@ -29,6 +33,13 @@ class GMWindow(Frame):
 ##      self.helpMenu()
 
 # cascade options -- functions loaded through each function file
+# fill in functions as you go along
+
+# Since buttons demand a no argument function
+# you can pass a default argument by embedding it into a lambda
+# multiple functions can be run by logical short circuts
+# string with and while each function returns True
+
     def fileMenu(self, menu):
         filemenu = Menu(menu)
         menu.add_cascade(label="File", menu=filemenu)
@@ -42,7 +53,7 @@ class GMWindow(Frame):
         partymenu = Menu(menu)
         menu.add_cascade(label="Party", menu=partymenu)
         partymenu.add_command(label="Add Member", command=lambda : addMember(self.master, app))
-        partymenu.add_command(label="Display Party", command=lambda : displayParty(self.master, self.party))
+        partymenu.add_command(label="Display Party", command=lambda : displayParty(self.master, app))
         partymenu.add_command(label="New", command=lambda : newParty(app))
         partymenu.add_command(label="Open", command=None)
         partymenu.add_command(label="Save", command=None)
