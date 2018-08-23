@@ -11,6 +11,13 @@ def getData(file):
     print("Loaded " + file)
     return data
 
+def findData(file, name):
+    with open(file + ".csv", 'rt') as data_file:
+        reader = csv.reader(data_file, delimiter=',')
+        for row in reader:
+            if row[0] == name:
+                return row
+
 def setData(path, data):
     with open(path + ".csv", "w", newline='') as data_file:
         writer = csv.writer(data_file, delimiter=',')
