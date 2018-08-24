@@ -97,6 +97,7 @@ class CWindow(Frame):
         self.adjustButtons("ST", "HP", 1)
         self.displayStat("DX", p["DX"][0], 1, 1)
         self.adjustButtons("DX", stat2 = None, value = 1)
+        
         self.displayStat("IQ", p["IQ"][0], 2, 1)
         # Manually adjust IQ since adjustButtons only moves 1 extra stat
         Button(self.master, text ="+", command = lambda: self.updateStatDisplay(path = "data\characters\BASE\Stats", stat1 = "IQ", stat2 = "PER", value = 1) and self.updateStatDisplay(path = "data\characters\BASE\Stats", stat1 = "WILL", stat2 = None, value = 1, free = True)).grid(row = 2, column = 2)
@@ -112,6 +113,8 @@ class CWindow(Frame):
         self.adjustButtons("PER", stat2 = None, value = 1)
         self.displayStat("FP", p["FP"][0], 3, 4)
         self.adjustButtons("FP", stat2 = None, value = 1)
+        self.displayStat("SPEED", p["SPEED"][0], 4, 1)
+        self.adjustButtons("SPEED", stat2 = None, value = 0.25)
             
 #begin window
 def runCWindow(Croot = None, character = None):
@@ -122,3 +125,4 @@ def runCWindow(Croot = None, character = None):
 c = GURPSCharacter()
 c.loadCharacter(name = "test")
 runCWindow(Tk(), c)
+

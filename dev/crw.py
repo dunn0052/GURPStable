@@ -1,5 +1,5 @@
 # read write from csv files
-
+import re
 import csv
 
 def getData(file):
@@ -16,7 +16,7 @@ def findData(file, name):
         reader = csv.reader(data_file, delimiter=',')
         for row in reader:
             if row[0] == name:
-                return row
+                return clean_row(row)
 
 def setData(path, data):
     with open(path + ".csv", "w", newline='') as data_file:
@@ -42,9 +42,9 @@ def clean_item(item):
         return False
     elif isinstance(item, bool):
         return item
-    elif isinstance(item, int):
-        return item
-    elif item.isnumeric():
+    elif re.match("^\d+?\.\d+?$", item):
+        return float(item)
+    elif re.match("[+-]?\d+?$", item):
         return int(item)
     elif item == "None":
         return None
