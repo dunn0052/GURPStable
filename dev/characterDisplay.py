@@ -13,19 +13,24 @@ class CWindow(Frame):
         # if set to new char prompt for name
         self.title = self.player.fluff["Name"][0] + " - " + self.player.fluff["Player"][0]
         self.master.title(self.title)
+        #tracker holds text variable reference
+        # self.tracker[stat] = [textvariable, label reference]
         self.tracker = {}
         #self.displayCharacter()
         self.editCharacter()
-        
-        
+           
         
     # format stat item
     def displayStat(self, stat, value, grid_row, grid_column, justification = "nw", bg_color = None, font = None):
         text = StringVar()
         text.set(stat + ": " + str(value))
-        self.tracker[stat] = text  
-        Label(self.master, textvariable=self.tracker[stat], anchor = justification, bg = bg_color, font = font).grid(row = grid_row, column = grid_column)
-    # 
+        self.tracker[stat] = [text]  
+        L = Label(self.master, textvariable=self.tracker[stat][0], anchor = justification, bg = bg_color, font = font)
+        # .grid after declaration so info can be displayed
+        L.grid(row = grid_row, column = grid_column)
+        self.tracker[stat].append(L)
+        return True
+
     def displayAllStat(self, row, column, dictionary, offset = 0, font = None):
         offset = offset
         for item in dictionary:
@@ -33,16 +38,27 @@ class CWindow(Frame):
             offset +=1
         return offset
 
+    def updateStatDisplay(self, path, stat1, stat2 = None, value = 1, free = False):
+        #actually changes character stats
+        self.player.adjSTAT(path, stat1, stat2, value, free = free)
 
-    def updateStatDisplay(self, path, stat1, stat2 = None, variable = 1):
-        self.player.adjSTAT(path, stat1, stat2, variable)
-        self.tracker[stat1].set(stat1 +": " + str(self.player.stat[stat1][0]))
+        # changes displayed stats
+        self.tracker[stat1][0].set(stat1 +": " + str(self.player.stat[stat1][0]))
         if stat2 != None:
-            self.tracker[stat2].set(stat2 +": " + str(self.player.stat[stat2][0]))
+            self.tracker[stat2][0].set(stat2 +": " + str(self.player.stat[stat2][0]))
         return True # could be used in lambda button
 
-    def plusButton(self, stat1, stat2, value):
-        return
+    def plusButton(self, stat1, stat2, value, row, column, path = "data\characters\BASE\Stats" ):
+        # could pass reference to master to make funciton more generic
+        Button(self.master, text ="+", command = lambda: self.updateStatDisplay(path, stat1, stat2, value)).grid(row = row, column = column)
+
+    def minusButton(self, stat1, stat2, value, row, column, path = "data\characters\BASE\Stats" ):
+        Button(self.master, text ="-", command = lambda: self.updateStatDisplay(path, stat1, stat2, value)).grid(row = row, column = column)       
+        
+    def adjustButtons(self, stat1, stat2, value, path = "data\characters\BASE\Stats"):
+        # grab label coordinates to display buttons around label, jfc
+        self.plusButton(stat1, stat2, value, self.tracker[stat1][1].grid_info()["row"], self.tracker[stat1][1].grid_info()["column"]+1, path)
+        self.minusButton(stat1, stat2, -value, self.tracker[stat1][1].grid_info()["row"], self.tracker[stat1][1].grid_info()["column"]-1, path)
         
     def displayCharacter(self):
         p = self.player.stat
@@ -51,10 +67,10 @@ class CWindow(Frame):
         self.displayStat("DX", p["DX"][0], 1, 1)
         self.displayStat("IQ", p["IQ"][0], 2, 1)
         self.displayStat("HT", p["HT"][0], 3, 1)
-        self.displayStat("HP", p["HP"][0], 0, 2)
-        self.displayStat("WILL", p["WILL"][0], 1, 2)
-        self.displayStat("PER", p["PER"][0], 2, 2)
-        self.displayStat("FP", p["FP"][0], 3, 2)
+        self.displayStat("HP", p["HP"][0], 0, 3)
+        self.displayStat("WILL", p["WILL"][0], 1, 3)
+        self.displayStat("PER", p["PER"][0], 2, 3)
+        self.displayStat("FP", p["FP"][0], 3, 3)
 
         self.displayStat("Name", self.player.fluff["Name"][0], 0, 0, font = "bold")
         self.displayStat("Player", self.player.fluff["Player"][0], 1, 0, font = "bold")
@@ -78,22 +94,31 @@ class CWindow(Frame):
         p = self.player.stat
         # directed display because dictionaries have no set order
         self.displayStat("ST", p["ST"][0], 0, 1)
+        self.adjustButtons("ST", "HP", 1)
         self.displayStat("DX", p["DX"][0], 1, 1)
+        self.adjustButtons("DX", stat2 = None, value = 1)
         self.displayStat("IQ", p["IQ"][0], 2, 1)
-        self.displayStat("HT", p["HT"][0], 3, 1)
-        self.displayStat("HP", p["HP"][0], 0, 3)
-        self.displayStat("WILL", p["WILL"][0], 1, 3)
-        self.displayStat("PER", p["PER"][0], 2, 3)
-        self.displayStat("FP", p["FP"][0], 3, 3)
-        Button(self.master, text ="+", command = lambda:self.updateStatDisplay("data\characters\BASE\Stats", "ST", "HP", 1)).grid(row = 0, column = 2)
-        Button(self.master, text ="-", command = lambda:self.updateStatDisplay("data\characters\BASE\Stats", "ST", "HP", -1)).grid(row = 0, column = 0)         
+        # Manually adjust IQ since adjustButtons only moves 1 extra stat
+        Button(self.master, text ="+", command = lambda: self.updateStatDisplay(path = "data\characters\BASE\Stats", stat1 = "IQ", stat2 = "PER", value = 1) and self.updateStatDisplay(path = "data\characters\BASE\Stats", stat1 = "WILL", stat2 = None, value = 1, free = True)).grid(row = 2, column = 2)
+        Button(self.master, text ="-", command = lambda: self.updateStatDisplay(path = "data\characters\BASE\Stats", stat1 = "IQ", stat2 = "PER", value = -1) and self.updateStatDisplay(path = "data\characters\BASE\Stats", stat1 = "WILL", stat2 = None, value = -1, free = True)).grid(row = 2, column = 0)
 
+        self.displayStat("HT", p["HT"][0], 3, 1)
+        self.adjustButtons("HT", "FP", 1)
+        self.displayStat("HP", p["HP"][0], 0, 4)
+        self.adjustButtons("HP", stat2 = None, value = 1)
+        self.displayStat("WILL", p["WILL"][0], 1, 4)
+        self.adjustButtons("WILL", stat2 = None, value = 1)
+        self.displayStat("PER", p["PER"][0], 2, 4)
+        self.adjustButtons("PER", stat2 = None, value = 1)
+        self.displayStat("FP", p["FP"][0], 3, 4)
+        self.adjustButtons("FP", stat2 = None, value = 1)
+            
 #begin window
 def runCWindow(Croot = None, character = None):
     app = CWindow(master=Croot, character = character)
     Croot.mainloop()
 
-
+# test edit interface
 c = GURPSCharacter()
 c.loadCharacter(name = "test")
 runCWindow(Tk(), c)
