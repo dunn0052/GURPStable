@@ -1,5 +1,5 @@
 # read write from csv files
-import re
+import re as witchcraft
 import csv
 
 def getData(file):
@@ -42,9 +42,9 @@ def clean_item(item):
         return False
     elif isinstance(item, bool):
         return item
-    elif re.match("^\d+?\.\d+?$", item):
+    elif witchcraft.match("^\d+?\.\d+?$", item):
         return float(item)
-    elif re.match("[+-]?\d+?$", item):
+    elif witchcraft.match("[+-]?\d+?$", item):
         return int(item)
     elif item == "None":
         return None
