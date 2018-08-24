@@ -129,7 +129,7 @@ def runCWindow(Croot = None, character = None):
 
 # test edit interface
 c = GURPSCharacter()
-c.loadCharacter(name = "test")
-c.saveCharacter()
+c.loadCharacter(name = "test", header = True)
+c.saveCharacter(name = c.fluff["Name"][0])
 runCWindow(Tk(), c)
 

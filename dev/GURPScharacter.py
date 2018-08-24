@@ -15,24 +15,32 @@ class GURPSCharacter:
         self.fluff = {}
 
 
-    def loadCharacter(self, path = "data/characters/", name = None):
+    def loadCharacter(self, path = "data/characters/", name = None, header = False):
         # character data init - get char data by name folder
-        self.loadData(path + name + "/Stats", self.stat)
-        self.loadData(path + name + "/Items", self.item)
-        self.loadData(path + name + "/Armor", self.armor)
-        self.loadData(path + name + "/Weapons", self.weapon)
-        self.loadData(path + name + "/Advantages", self.advantage)
-        self.loadData(path + name + "/Perks", self.perk)
-        self.loadData(path + name + "/Disadvantages", self.disadvantage)
-        self.loadData(path + name + "/Quirks", self.quirk)
-        self.loadData(path + name + "/Skills", self.skill)
-        self.loadData(path + name + "/Fluff", self.fluff)
+        self.loadData(path + name + "/Stats", self.stat, header = header)
+        self.loadData(path + name + "/Items", self.item, header = header)
+        self.loadData(path + name + "/Armor", self.armor, header = header)
+        self.loadData(path + name + "/Weapons", self.weapon, header = header)
+        self.loadData(path + name + "/Advantages", self.advantage, header = header)
+        self.loadData(path + name + "/Perks", self.perk, header = header)
+        self.loadData(path + name + "/Disadvantages", self.disadvantage, header = header)
+        self.loadData(path + name + "/Quirks", self.quirk, header = header)
+        self.loadData(path + name + "/Skills", self.skill, header = header)
+        self.loadData(path + name + "/Fluff", self.fluff, header = header)
 
-    def saveCharacter(self, path = "data/characters/saveTest/", name = None):
-        #fix save to load all data
-        crw.setData(path = path, name = "Stats", data = self.formatCharacter(self.stat))
-        return
-
+    def saveCharacter(self, path = "data/characters/", name = None):
+        crw.makePath(path = path + name)
+        crw.setData(path = path + name + "/Stats", data = self.formatCharacter(self.stat))
+        crw.setData(path = path + name + "/Items", data = self.formatCharacter(self.item))
+        crw.setData(path = path + name + "/Armor", data = self.formatCharacter(self.armor))
+        crw.setData(path = path + name + "/Weapons", data = self.formatCharacter(self.weapon))
+        crw.setData(path = path + name + "/Advantages", data = self.formatCharacter(self.advantage))
+        crw.setData(path = path + name + "/Perks", data = self.formatCharacter(self.perk))
+        crw.setData(path = path + name + "/Disadvantages", data = self.formatCharacter(self.disadvantage))
+        crw.setData(path = path + name + "/Quirks", data = self.formatCharacter(self.quirk))
+        crw.setData(path = path + name + "/Skills", data = self.formatCharacter(self.skill))
+        crw.setData(path = path + name + "/Fluff", data = self.formatCharacter(self.fluff))
+        
     def formatCharacter(self, dictionary):
         n = []
         for name in dictionary:
