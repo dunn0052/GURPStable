@@ -41,7 +41,7 @@ class CWindow(Frame):
     def updateStatDisplay(self, path, stat1, stat2 = None, value = 1, free = False):
         #actually changes character stats
         self.player.adjSTAT(path, stat1, stat2, value, free = free)
-
+        print(self.player.stat["POINTS"][0])
         # changes displayed stats
         self.tracker[stat1][0].set(stat1 +": " + str(self.player.stat[stat1][0]))
         if stat2 != None:
@@ -115,6 +115,12 @@ class CWindow(Frame):
         self.adjustButtons("FP", stat2 = None, value = 1)
         self.displayStat("SPEED", p["SPEED"][0], 4, 1)
         self.adjustButtons("SPEED", stat2 = None, value = 0.25)
+        self.displayStat("MOVE", p["MOVE"][0], 4, 4)
+        self.adjustButtons("MOVE", stat2 = None, value = 1)
+
+        #fluff corner
+        self.displayStat("Name", self.player.fluff["Name"][0], grid_row = 0, grid_column = 6, font = "bold")
+        self.displayStat("Player", self.player.fluff["Player"][0], grid_row = 1, grid_column = 6, font = "bold")
             
 #begin window
 def runCWindow(Croot = None, character = None):
@@ -124,5 +130,6 @@ def runCWindow(Croot = None, character = None):
 # test edit interface
 c = GURPSCharacter()
 c.loadCharacter(name = "test")
+c.saveCharacter()
 runCWindow(Tk(), c)
 
