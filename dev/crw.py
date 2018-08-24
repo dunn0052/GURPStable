@@ -1,6 +1,7 @@
 # read write from csv files
 import re as witchcraft
 import csv
+import os
 
 def getData(file):
     data = []
@@ -18,12 +19,14 @@ def findData(file, name):
             if row[0] == name:
                 return clean_row(row)
 
-def setData(path, data):
-    with open(path + ".csv", "w", newline='') as data_file:
+def setData(path, name, data):
+    # make the path
+    os.makedirs(path) if not os.path.exists(path) else True
+    with open(path + name + ".csv", "w", newline='') as data_file:
         writer = csv.writer(data_file, delimiter=',')
         for item in data:
             writer.writerow(item)
-    print("Saved " + path)
+    print("Saved " + path + name + ".csv")
 
 
 def clean_row(row):
