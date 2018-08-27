@@ -18,6 +18,7 @@ def findData(file, name):
         for row in reader:
             if row[0] == name:
                 return clean_row(row)
+    print(name + " not found.")
 
 def makePath(path):
     # make the path if not already there - once per char load hahaha

@@ -1,0 +1,436 @@
+Accounting,IQ,H,174,Business
+Acrobatics,DX,H,174,Athletic
+Acting,IQ,A,174,Social
+Acting,IQ,A,174,Spy
+Administration,IQ,A,174,Business
+Administration,IQ,A,174,Social
+Aerobatics,DX,H,174,Athletic
+Airshipman/TL,IQ,E,185,Vehicle
+Alchemy/TL,IQ,VH,174,Natural Sciences
+Alchemy/TL,IQ,VH,174,Occult/Magical
+Animal Handling†,IQ,A,175,Animal
+Anthropology†,IQ,H,175,Social Sciences/Humanities
+Aquabatics,DX,H,174,Athletic
+Archaeology,IQ,H,176,Social Sciences/Humanities
+Architecture/TL,IQ,A,176,Design/Invention
+Area Knowledge†,IQ,E,176,Everyman
+Area Knowledge†,IQ,E,176,Knowledge
+Armoury/TL†,IQ,A,178,Military
+Armoury/TL†,IQ,A,178,Repair/Maintenance
+Artillery/TL†,IQ,A,178,"Combat, Ranged"
+Artist†,IQ,H,179,Arts/Entertainment
+Artist† (Pottery),IQ,H,179,Craft
+Artist† (Sculpting),IQ,H,179,Craft
+Artist† (Woodworking),IQ,H,179,Craft
+Astronomy/TL,IQ,H,179,Natural Sciences
+Autohypnosis,Will,H,179,Esoteric
+Axe/Mace,DX,A,208,"Combat, Melee"
+Battlesuit/TL,DX,A,192,Technical
+Battlesuit/TL,DX,A,192,Vehicle
+Beam Weapons/TL†,DX,E,179,"Combat, Ranged"
+Bicycling,DX,E,180,Athletic
+Bicycling,DX,E,180,Vehicle
+Bioengineering/TL†,IQ,H,180,Design/Invention
+Biology/TL†,IQ,VH,180,Natural Sciences
+Biology/TL†,IQ,VH,180,Plant
+Blind Fighting,Per,VH,180,Esoteric
+Blowpipe,DX,H,180,"Combat, Ranged"
+Boating/TL†,DX,A,180,Vehicle
+Body Control,HT,VH,181,Esoteric
+Body Language,Per,A,181,Police
+Body Language,Per,A,181,Social
+Body Language,Per,A,181,Spy
+Body Sense,DX,H,181,Athletic
+Bolas,DX,A,181,"Combat, Ranged"
+Bow,DX,A,182,"Combat, Ranged"
+Boxing,DX,A,182,"Combat, Melee"
+Brain Hacking/TL,IQ,H,182,Military
+Brain Hacking/TL,IQ,H,182,Spy
+Brainwashing/TL,IQ,H,182,Military
+Brainwashing/TL,IQ,H,182,Spy
+Brawling,DX,E,182,"Combat, Melee"
+Breaking Blow,IQ,H,182,Esoteric
+Breath Control,HT,H,182,Athletic
+Broadsword,DX,A,208,"Combat, Melee"
+Camouflage,IQ,E,183,Military
+Camouflage,IQ,E,183,Outdoor/Exploration
+Captivate,Will,H,191,Enthrallment
+Carousing,HT,E,183,Criminal/Street
+Carousing,HT,E,183,Social
+Carpentry,IQ,E,183,Craft
+Cartography/TL,IQ,A,183,Outdoor/Exploration
+Cartography/TL,IQ,A,183,Social Sciences/Humanities
+Chemistry/TL,IQ,H,183,Natural Sciences
+Climbing,DX,A,183,Athletic
+Climbing,DX,A,183,Criminal/Street
+Climbing,DX,A,183,Outdoor/Exploration
+Cloak,DX,A,184,"Combat, Melee"
+Combat Art or Sport,DX,Varies,184,Athletic
+Computer Hacking/TL,IQ,VH,184,Criminal/Street
+Computer Hacking/TL,IQ,VH,184,Spy
+Computer Operation/TL,IQ,E,184,Everyman
+Computer Operation/TL,IQ,E,184,Scholarly
+Computer Operation/TL,IQ,E,184,Technical
+Computer Programming/TL,IQ,H,184,Design/Invention
+Connoisseur†,IQ,A,185,Arts/Entertainment
+Connoisseur†,IQ,A,185,Knowledge
+Connoisseur†,IQ,A,185,Social
+Cooking,IQ,A,185,Everyman
+Counterfeiting/TL,IQ,H,185,Criminal/Street
+Crewman/TL,IQ,E,185,Vehicle
+Criminology/TL,IQ,A,186,Police
+Criminology/TL,IQ,A,186,Social Sciences/Humanities
+Crossbow,DX,E,186,"Combat, Ranged"
+Cryptography/TL,IQ,H,186,Military
+Cryptography/TL,IQ,H,186,Spy
+Current Affairs/TL†,IQ,E,186,Everyman
+Current Affairs/TL†,IQ,E,186,Knowledge
+Current Affairs/TL†,IQ,E,186,Social
+Current Affairs/TL† (Business),IQ,E,186,Business
+Current Affairs/TL† (High or Pop Culture),IQ,E,186,Arts/Entertainment
+Dancing,DX,A,187,Arts/Entertainment
+Detect Lies,Per,H,187,Police
+Detect Lies,Per,H,187,Social
+Detect Lies,Per,H,187,Spy
+Diagnosis/TL,IQ,H,187,Medical
+Diplomacy,IQ,H,187,Business
+Diplomacy,IQ,H,187,Police
+Diplomacy,IQ,H,187,Social
+Disguise/TL†,IQ,A,187,Criminal/Street
+Disguise/TL†,IQ,A,187,Spy
+Diving Suit/TL,DX,A,192,Technical
+Dreaming,Will,H,188,Esoteric
+Driving/TL†,DX,A,188,Vehicle
+Dropping,DX,A,189,"Combat, Ranged"
+Economics,IQ,H,189,Business
+Economics,IQ,H,189,Social Sciences/Humanities
+Electrician/TL,IQ,A,189,Repair/Maintenance
+Electronics Operation/TL†,IQ,A,189,Technical
+Electronics Operation/TL† (Electronic Warfare),IQ,A,189,Military
+Electronics Operation/TL† (Electronic Warfare),IQ,A,189,Spy
+Electronics Operation/TL† (Media),IQ,A,189,Arts/Entertainment
+Electronics Operation/TL† (Medical),IQ,A,189,Medical
+Electronics Operation/TL† (Security),IQ,A,189,Criminal/Street
+Electronics Operation/TL† (Security),IQ,A,189,Spy
+Electronics Operation/TL† (Surveillance),IQ,A,189,Police
+Electronics Operation/TL† (Surveillance),IQ,A,189,Spy
+Electronics Repair/TL†,IQ,A,190,Repair/Maintenance
+Electronics Repair/TL† (Electronic Warfare),IQ,A,190,Military
+Engineer/TL†,IQ,H,190,Design/Invention
+Enthrallment,Will,H,191,Esoteric
+Environment Suit/TL,DX,A,192,Technical
+Erotic Art,DX,A,192,Social
+Escape,DX,H,192,Criminal/Street
+Escape,DX,H,192,Spy
+Esoteric Medicine,Per,H,192,Esoteric
+Esoteric Medicine,Per,H,192,Medical
+Exorcism,Will,H,193,Occult/Magical
+Expert Skill†,IQ,H,193,Knowledge
+Expert Skill†,IQ,H,193,Scholarly
+Expert Skill† (Computer Security),IQ,H,193,Spy
+Expert Skill† (Egyptology),IQ,H,193,Social Sciences/Humanities
+Expert Skill† (Epidemiology),IQ,H,193,Medical
+Expert Skill† (Epidemiology),IQ,H,193,Natural Sciences
+Expert Skill† (Hydrology),IQ,H,193,Natural Sciences
+Expert Skill† (Military Science),IQ,H,193,Military
+Expert Skill† (Natural Philosophy),IQ,H,193,Natural Sciences
+Expert Skill† (Political Science),IQ,H,193,Social Sciences/Humanities
+Expert Skill† (Psionics),IQ,H,193,Occult/Magical
+Expert Skill† (Thanatology),IQ,H,193,Social Sciences/Humanities
+Expert Skill† (Xenology),IQ,H,193,Social Sciences/Humanities
+Explosives/TL†,IQ,A,194,Criminal/Street
+Explosives/TL†,IQ,A,194,Military
+Explosives/TL†,IQ,A,194,Technical
+Explosives/TL† (EOD),IQ,A,194,Police
+Falconry,IQ,A,194,Animal
+Farming/TL,IQ,A,194,Plant
+Fast-Draw†,DX,E,194,"Combat, Melee"
+Fast-Draw†,DX,E,194,"Combat, Ranged"
+Fast-Talk,IQ,A,195,Criminal/Street
+Fast-Talk,IQ,A,195,Social
+Fast-Talk,IQ,A,195,Spy
+Filch,DX,A,195,Criminal/Street
+Filch,DX,A,195,Spy
+Finance,IQ,H,195,Business
+Fire Eating,DX,A,195,Arts/Entertainment
+First Aid/TL,IQ,E,195,Everyman
+First Aid/TL,IQ,E,195,Medical
+Fishing,Per,E,195,Outdoor/Exploration
+Flail,DX,H,208,"Combat, Melee"
+Flight,HT,A,195,Athletic
+Flying Leap,IQ,H,196,Esoteric
+Force Sword,DX,A,208,"Combat, Melee"
+Force Whip,DX,A,209,"Combat, Melee"
+Forced Entry,DX,E,196,Criminal/Street
+Forced Entry,DX,E,196,Police
+Forced Entry,DX,E,196,Spy
+Forensics/TL,IQ,H,196,Police
+Forgery/TL,IQ,H,196,Criminal/Street
+Forgery/TL,IQ,H,196,Spy
+Fortune-Telling†,IQ,A,196,Social
+Forward Observer/TL,IQ,A,196,Military
+Free Fall,DX,A,197,Athletic
+Freight Handling/TL,IQ,A,197,Technical
+Freight Handling/TL,IQ,A,197,Vehicle
+Gambling,IQ,A,197,Criminal/Street
+Gambling,IQ,A,197,Social
+Games†,IQ,E,197,Knowledge
+Gardening,IQ,E,197,Plant
+Garrote,DX,E,197,"Combat, Melee"
+Geography/TL†,IQ,H,198,Social Sciences/Humanities
+Geology/TL†,IQ,H,198,Natural Sciences
+Gesture,IQ,E,198,Social
+Group Performance†,IQ,A,198,Arts/Entertainment
+Gunner/TL†,DX,E,198,"Combat, Ranged"
+Guns/TL†,DX,E,198,"Combat, Ranged"
+Hazardous Materials/TL†,IQ,A,199,Technical
+Heraldry,IQ,A,199,Knowledge
+Heraldry,IQ,A,199,Social
+Herb Lore/TL,IQ,VH,199,Occult/Magical
+Herb Lore/TL,IQ,VH,199,Plant
+Hidden Lore†,IQ,A,199,Knowledge
+Hidden Lore† (Demon Lore),IQ,A,199,Occult/Magical
+Hidden Lore† (Faerie Lore),IQ,A,199,Occult/Magical
+Hidden Lore† (Spirit Lore),IQ,A,199,Occult/Magical
+Hiking,HT,A,200,Athletic
+Hiking,HT,A,200,Outdoor/Exploration
+History†,IQ,H,200,Social Sciences/Humanities
+Hobby Skill,DX or IQ,E,200,Knowledge
+Holdout,IQ,A,200,Criminal/Street
+Holdout,IQ,A,200,Spy
+Housekeeping,IQ,E,200,Everyman
+Hypnotism,IQ,H,201,Medical
+Immovable Stance,DX,H,201,Esoteric
+Innate Attack†,DX,E,201,"Combat, Ranged"
+Intelligence Analysis/TL,IQ,H,201,Military
+Intelligence Analysis/TL,IQ,H,201,Police
+Intelligence Analysis/TL,IQ,H,201,Spy
+Interrogation,IQ,A,202,Military
+Interrogation,IQ,A,202,Police
+Interrogation,IQ,A,202,Spy
+Intimidation,Will,A,202,Criminal/Street
+Intimidation,Will,A,202,Police
+Intimidation,Will,A,202,Social
+Invisibility Art,IQ,VH,202,Esoteric
+Jeweler/TL,IQ,H,203,Craft
+Jitte/Sai,DX,A,208,"Combat, Melee"
+Judo,DX,H,203,"Combat, Melee"
+Jumping,DX,E,203,Athletic
+Karate,DX,H,203,"Combat, Melee"
+Kiai,HT,H,203,Esoteric
+Knife,DX,E,208,"Combat, Melee"
+Knot-Tying,DX,E,203,Everyman
+Kusari,DX,H,209,"Combat, Melee"
+Lance,DX,A,204,"Combat, Melee"
+Lasso,DX,A,204,"Combat, Ranged"
+Law†,IQ,H,204,Business
+Law†,IQ,H,204,Police
+Law†,IQ,H,204,Social Sciences/Humanities
+Leadership,IQ,A,204,Military
+Leadership,IQ,A,204,Social
+Leatherworking,DX,E,205,Craft
+Lifting,HT,A,205,Athletic
+Light Walk,DX,H,205,Esoteric
+Linguistics,IQ,H,205,Social Sciences/Humanities
+Lip Reading,Per,A,205,Spy
+Liquid Projector/TL†,DX,E,205,"Combat, Ranged"
+Literature,IQ,H,205,Scholarly
+Literature,IQ,H,205,Social Sciences/Humanities
+Lockpicking/TL,IQ,A,206,Criminal/Street
+Lockpicking/TL,IQ,A,206,Police
+Lockpicking/TL,IQ,A,206,Spy
+Lockpicking/TL,IQ,A,206,Technical
+Machinist/TL,IQ,A,206,Repair/Maintenance
+Main-Gauche,DX,A,208,"Combat, Melee"
+Makeup/TL,IQ,E,206,Arts/Entertainment
+Market Analysis,IQ,H,207,Business
+Masonry,IQ,E,207,Craft
+Mathematics/TL†,IQ,H,207,Business
+Mathematics/TL†,IQ,H,207,Natural Sciences
+Mathematics/TL† (Surveying),IQ,H,207,Technical
+Mechanic/TL†,IQ,A,207,Repair/Maintenance
+Meditation,Will,H,207,Esoteric
+Melee Weapon,DX,Varies,208,"Combat, Melee"
+Mental Strength,Will,E,209,Esoteric
+Merchant,IQ,A,209,Business
+Merchant,IQ,A,209,Social
+Metallurgy/TL,IQ,H,209,Natural Sciences
+Meteorology/TL†,IQ,A,209,Natural Sciences
+Mimicry†,IQ,H,210,Arts/Entertainment
+Mimicry† (Animal Sounds or Bird Calls),IQ,H,210,Animal
+Mimicry† (Animal Sounds or Bird Calls),IQ,H,210,Outdoor/Exploration
+Mind Block,Will,A,210,Esoteric
+Monowire Whip,DX,H,209,"Combat, Melee"
+Mount,DX,A,210,Animal
+Mount,DX,A,210,Athletic
+Musical Composition,IQ,H,210,Arts/Entertainment
+Musical Influence,IQ,VH,210,Esoteric
+Musical Instrument†,IQ,H,211,Arts/Entertainment
+Naturalist†,IQ,H,211,Animal
+Naturalist†,IQ,H,211,Natural Sciences
+Naturalist†,IQ,H,211,Outdoor/Exploration
+Naturalist†,IQ,H,211,Plant
+Navigation/TL†,IQ,A,211,Vehicle
+Navigation/TL†,IQ,A,211,Outdoor/Exploration
+Navigation/TL†,IQ,A,211,Technical
+NBC Suit/TL,DX,A,192,Military
+NBC Suit/TL,DX,A,192,Technical
+Net,DX,H,211,"Combat, Ranged"
+Observation,Per,A,211,Criminal/Street
+Observation,Per,A,211,Military
+Observation,Per,A,211,Police
+Observation,Per,A,211,Spy
+Occultism,IQ,A,212,Occult/Magical
+Packing,IQ,A,212,Animal
+Paleontology/TL†,IQ,H,212,Natural Sciences
+Paleontology/TL† (Paleoanthropology),IQ,H,212,Social Sciences/Humanities
+Paleontology/TL† (Paleobotany),IQ,H,212,Plant
+Panhandling,IQ,E,212,Criminal/Street
+Panhandling,IQ,E,212,Social
+Parachuting/TL,DX,E,212,Athletic
+Parachuting/TL,DX,E,212,Military
+Parachuting/TL,DX,E,212,Technical
+Parry Missile Weapons,DX,H,212,"Combat, Melee"
+Performance,IQ,A,212,Arts/Entertainment
+Persuade,Will,H,191,Enthrallment
+Pharmacy/TL†,IQ,H,213,Design/Invention
+Pharmacy/TL†,IQ,H,213,Medical
+Pharmacy/TL† (Herbal),IQ,H,213,Plant
+Philosophy†,IQ,H,213,Social Sciences/Humanities
+Photography/TL,IQ,A,213,Arts/Entertainment
+Photography/TL,IQ,A,213,Spy
+Photography/TL,IQ,A,213,Technical
+Physician/TL,IQ,H,213,Medical
+Physics/TL,IQ,VH,213,Natural Sciences
+Physiology/TL†,IQ,H,213,Medical
+Physiology/TL†,IQ,H,213,Natural Sciences
+Pickpocket,DX,H,213,Criminal/Street
+Piloting/TL†,DX,A,214,Vehicle
+Poetry,IQ,A,214,Arts/Entertainment
+Poisons/TL,IQ,H,214,Criminal/Street
+Poisons/TL,IQ,H,214,Medical
+Poisons/TL,IQ,H,214,Spy
+Polearm,DX,A,208,"Combat, Melee"
+Politics,IQ,A,215,Business
+Politics,IQ,A,215,Social
+Power Blow,Will,H,215,Esoteric
+Pressure Points,IQ,H,215,Esoteric
+Pressure Secrets,IQ,VH,215,Esoteric
+Professional Skill,DX or IQ,A,215,Knowledge
+Propaganda/TL,IQ,A,216,Business
+Propaganda/TL,IQ,A,216,Military
+Propaganda/TL,IQ,A,216,Social
+Propaganda/TL,IQ,A,216,Spy
+Prospecting/TL,IQ,A,216,Outdoor/Exploration
+Psychology,IQ,H,216,Medical
+Psychology,IQ,H,216,Social Sciences/Humanities
+Public Speaking,IQ,A,216,Business
+Public Speaking,IQ,A,216,Scholarly
+Public Speaking,IQ,A,216,Social
+Push,DX,H,216,Esoteric
+Rapier,DX,A,208,"Combat, Melee"
+Religious Ritual†,IQ,H,217,Occult/Magical
+Research/TL,IQ,A,217,Scholarly
+Research/TL,IQ,A,217,Spy
+Riding†,DX,A,217,Animal
+Ritual Magic†,IQ,VH,218,Occult/Magical
+Running,HT,A,218,Athletic
+Saber,DX,A,208,"Combat, Melee"
+Savoir-Faire†,IQ,E,218,Knowledge
+Savoir-Faire†,IQ,E,218,Social
+Savoir-Faire† (High Society),IQ,E,218,Business
+Savoir-Faire† (Mafia),IQ,E,218,Criminal/Street
+Savoir-Faire† (Military),IQ,E,218,Military
+Savoir-Faire† (Police),IQ,E,218,Police
+Savoir-Faire† (Servant),IQ,E,218,Everyman
+Scrounging,Per,E,218,Criminal/Street
+Scuba/TL,IQ,A,219,Athletic
+Scuba/TL,IQ,A,219,Military
+Scuba/TL,IQ,A,219,Outdoor/Exploration
+Scuba/TL,IQ,A,219,Technical
+Seamanship/TL,IQ,E,185,Vehicle
+Search,Per,A,219,Police
+Search,Per,A,219,Spy
+Sewing/TL,DX,E,219,Craft
+Sewing/TL,DX,E,219,Everyman
+Sex Appeal,HT,A,219,Social
+Shadowing,IQ,A,219,Criminal/Street
+Shadowing,IQ,A,219,Police
+Shadowing,IQ,A,219,Spy
+Shield†,DX,E,220,"Combat, Melee"
+Shiphandling/TL†,IQ,H,220,Vehicle
+Shortsword,DX,A,209,"Combat, Melee"
+Singing,HT,E,220,Arts/Entertainment
+Skating,HT,H,220,Athletic
+Skating,HT,H,220,Outdoor/Exploration
+Skiing,HT,H,221,Athletic
+Skiing,HT,H,221,Outdoor/Exploration
+Sleight of Hand,DX,H,221,Arts/Entertainment
+Sleight of Hand,DX,H,221,Criminal/Street
+Sling,DX,H,221,"Combat, Ranged"
+Smallsword,DX,A,208,"Combat, Melee"
+Smith/TL†,IQ,A,221,Craft
+Smuggling,IQ,A,221,Criminal/Street
+Smuggling,IQ,A,221,Criminal/Street
+Sociology,IQ,H,221,Social Sciences/Humanities
+Soldier/TL,IQ,A,221,Military
+Spacer/TL,IQ,E,185,Vehicle
+Spear,DX,A,208,"Combat, Melee"
+Spear Thrower,DX,A,222,"Combat, Ranged"
+Speed-Reading,IQ,A,222,Scholarly
+Sports,DX,A,222,Athletic
+Staff,DX,A,208,"Combat, Melee"
+Stage Combat,DX,A,222,Arts/Entertainment
+Stealth,DX,A,222,Criminal/Street
+Stealth,DX,A,222,Police
+Stealth,DX,A,222,Spy
+Strategy†,IQ,H,222,Military
+Streetwise,IQ,A,223,Criminal/Street
+Streetwise,IQ,A,223,Police
+Streetwise,IQ,A,223,Social
+Submarine/TL†,DX,A,223,Vehicle
+Submariner/TL,IQ,E,185,Vehicle
+Suggest,Will,H,191,Enthrallment
+Sumo Wrestling,DX,A,223,"Combat, Melee"
+Surgery/TL,IQ,VH,223,Medical
+Survival†,Per,A,223,Outdoor/Exploration
+Sway Emotions,Will,H,192,Enthrallment
+Swimming,HT,E,224,Athletic
+Swimming,HT,E,224,Outdoor/Exploration
+Symbol Drawing†,IQ,H,224,Occult/Magical
+Tactics,IQ,H,224,Military
+Tactics,IQ,H,224,Police
+Teaching,IQ,A,224,Scholarly
+Teaching,IQ,A,224,Social
+Teamster†,IQ,A,225,Animal
+Teamster†,IQ,A,225,Vehicle
+Thaumatology,IQ,VH,225,Occult/Magical
+Theology†,IQ,H,226,Social Sciences/Humanities
+Throwing,DX,A,226,Athletic
+Throwing,DX,A,226,"Combat, Ranged"
+Throwing Art,DX,H,226,Esoteric
+Thrown Weapon†,DX,E,226,"Combat, Ranged"
+Tonfa,DX,A,209,"Combat, Melee"
+Tracking,Per,A,226,Outdoor/Exploration
+Traps/TL,IQ,A,226,Criminal/Street
+Traps/TL,IQ,A,226,Military
+Two-Handed Axe/Mace,DX,A,208,"Combat, Melee"
+Two-Handed Flail,DX,H,208,"Combat, Melee"
+Two-Handed Sword,DX,A,209,"Combat, Melee"
+Typing,DX,E,228,Everyman
+Typing,DX,E,228,Scholarly
+Typing,DX,E,228,Technical
+Urban Survival,Per,A,228,Criminal/Street
+Urban Survival,Per,A,228,Police
+Vacc Suit/TL,DX,A,192,Technical
+Ventriloquism,IQ,H,228,Arts/Entertainment
+Veterinary/TL,IQ,H,228,Animal
+Veterinary/TL,IQ,H,228,Medical
+Weather Sense,IQ,A,209,Everyman
+Weather Sense,IQ,A,209,Outdoor/Exploration
+Weird Science,IQ,VH,228,Design/Invention
+Whip,DX,A,209,"Combat, Melee"
+Wrestling,DX,A,228,"Combat, Melee"
+Writing,IQ,A,228,Arts/Entertainment
+Writing,IQ,A,228,Scholarly
+Zen Archery,IQ,VH,228,Esoteric

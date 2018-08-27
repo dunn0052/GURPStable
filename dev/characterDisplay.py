@@ -1,5 +1,6 @@
 from tkinter import *
 from GURPSCharacter import *
+import skillManager
 
 class CWindow(Frame):
     def __init__(self, master=None, character = None):
@@ -11,17 +12,18 @@ class CWindow(Frame):
         #set title
         self.player = character
         # if set to new char prompt for name
-        self.title = self.player.fluff["Name"][0] + " - " + self.player.fluff["Player"][0]
-        self.master.title(self.title)
+        #self.title = self.player.fluff["Name"][0] + " - " + self.player.fluff["Player"][0]
+        #self.master.title(self.title)
         #tracker holds text variable reference
         # self.tracker[stat] = [textvariable, label reference]
         self.tracker = {}
-        #self.displayCharacter()
-        self.editCharacter()
+        self.displayCharacter()
+        #self.newCharacter()
+        #self.editCharacter()
            
         
     # format stat item
-    def displayStat(self, stat, value, grid_row, grid_column, justification = "nw", bg_color = None, font = None):
+    def displayStat(self, stat, value, grid_row, grid_column, justification = "w", bg_color = None, font = None):
         text = StringVar()
         text.set(stat + ": " + str(value))
         self.tracker[stat] = [text]  
@@ -34,14 +36,39 @@ class CWindow(Frame):
     def displayAllStat(self, row, column, dictionary, offset = 0, font = None):
         offset = offset
         for item in dictionary:
-            Label(self.master, text = item).grid(row = row + offset, column = column, font = font)
+            self.displayStat(stat = item, value = dictionary[item][0], grid_row = row + offset, grid_column = column, font = font)
             offset +=1
         return offset
+
+    def displayAllSkills(self, row, column, dictionary, offset = 0, font = None):
+        offset = offset
+        for item in dictionary:
+            self.displayStat(stat = item, value = skillManager.getSkill(self.player, item), grid_row = row + offset, grid_column = column, font = font)
+            offset +=1
+        return offset
+
+    def displayAP(self, row, column):
+        Label(self.master, text = "Advantages and Perks", font = "bold").grid(row=row, column=column)
+        adv_offset = self.displayAllStat(row = row+1, column = column, dictionary = self.player.advantage)
+        perk_offset = self.displayAllStat(row = row+1, column = column, dictionary = self.player.perk, offset = adv_offset)
+        Label(self.master, text = "Disadvantages and Quirks", font = "bold").grid(row=row+ perk_offset, column=0)
+        dis_offset = self.displayAllStat(row = row+1, column = column, dictionary = self.player.disadvantage, offset = perk_offset)
+        self.displayAllStat(row = row+1, column = column, dictionary = self.player.quirk, offset = dis_offset)
+
+    def displaySkills(self, row, column):
+        Label(self.master, text = "Skills", font = "bold").grid(row = row, column = column)
+        self.displayAllSkills(row = row + 1, column = column, dictionary = self.player.skill)
+
+    def displayInventory(self, row, column):
+        Label(self.master, text = "Weapons, Armor, and Items", font = "bold").grid(row = row, column = column)
+        wpn_offset = self.displayAllStat(row = row+1, column = column, dictionary = self.player.weapon)
+        arm_offset =self.displayAllStat(row = row+1, column = column, dictionary = self.player.armor, offset = wpn_offset)
+        self.displayAllStat(row = row+1, column = column, dictionary = self.player.item, offset = arm_offset)        
 
     def updateStatDisplay(self, path, stat1, stat2 = None, value = 1, free = False):
         #actually changes character stats
         self.player.adjSTAT(path, stat1, stat2, value, free = free)
-        print(self.player.stat["POINTS"][0])
+        self.tracker["Points"][0].set("Points" + ": " + str(self.player.stat["POINTS"][0]))
         # changes displayed stats
         self.tracker[stat1][0].set(stat1 +": " + str(self.player.stat[stat1][0]))
         if stat2 != None:
@@ -67,32 +94,27 @@ class CWindow(Frame):
         self.displayStat("DX", p["DX"][0], 1, 1)
         self.displayStat("IQ", p["IQ"][0], 2, 1)
         self.displayStat("HT", p["HT"][0], 3, 1)
-        self.displayStat("HP", p["HP"][0], 0, 3)
-        self.displayStat("WILL", p["WILL"][0], 1, 3)
-        self.displayStat("PER", p["PER"][0], 2, 3)
-        self.displayStat("FP", p["FP"][0], 3, 3)
-
+        self.displayStat("HP", p["HP"][0], 0, 2)
+        self.displayStat("WILL", p["WILL"][0], 1, 2)
+        self.displayStat("PER", p["PER"][0], 2, 2)
+        self.displayStat("FP", p["FP"][0], 3, 2)
+        self.displayStat("SPEED", p["SPEED"][0], 4, 1)
+        self.displayStat("MOVE", p["MOVE"][0], 4, 2) 
         self.displayStat("Name", self.player.fluff["Name"][0], 0, 0, font = "bold")
         self.displayStat("Player", self.player.fluff["Player"][0], 1, 0, font = "bold")
+        self.displayStat("Points", self.player.fluff["POINTS"][0], 2, 0, font = "bold")
         
-        Label(self.master, text = "Advantages and Perks", font = "bold").grid(row=4, column=0)
-        adv_offset = self.displayAllStat(row = 5, column = 0, dictionary = self.player.advantage)
-        perk_offset = self.displayAllStat(row = 5, column = 0, dictionary = self.player.perk, offset = adv_offset)
-        Label(self.master, text = "Disadvantages and Quirks", font = "bold").grid(row=5+ perk_offset, column=0)
-        dis_offset = self.displayAllStat(row = 6, column = 0, dictionary = self.player.disadvantage, offset = perk_offset)
-        self.displayAllStat(row = 6, column = 0, dictionary = self.player.quirk, offset = dis_offset)
+        self.displayAP(row = 5, column = 0)
+        self.displaySkills(row = 5, column = 1)
+        self.displayInventory(row = 5, column = 2)
 
-        Label(self.master, text = "Skills", font = "bold").grid(row = 4, column = 1)
-        self.displayAllStat(row = 5, column = 1, dictionary = self.player.skill)
 
-        Label(self.master, text = "Weapons, Armor, and Items", font = "bold").grid(row = 4, column = 2)
-        wpn_offset = self.displayAllStat(row = 5, column = 2, dictionary = self.player.weapon)
-        arm_offset =self.displayAllStat(row = 5, column = 2, dictionary = self.player.armor, offset = wpn_offset)
-        self.displayAllStat(row = 5, column = 2, dictionary = self.player.item, offset = arm_offset)
+
         
     def editCharacter(self):
         p = self.player.stat
         # directed display because dictionaries have no set order
+        self.displayStat("Points", self.player.stat["POINTS"][0], grid_row = 2, grid_column = 6, font = "bold")
         self.displayStat("ST", p["ST"][0], 0, 1)
         self.adjustButtons("ST", "HP", 1)
         self.displayStat("DX", p["DX"][0], 1, 1)
@@ -120,8 +142,54 @@ class CWindow(Frame):
 
         #fluff corner
         self.displayStat("Name", self.player.fluff["Name"][0], grid_row = 0, grid_column = 6, font = "bold")
-        self.displayStat("Player", self.player.fluff["Player"][0], grid_row = 1, grid_column = 6, font = "bold")
-            
+        self.displayStat("Player", self.player.fluff["Player"][0], grid_row = 1, grid_column = 6, font = "bold")        
+        return True
+
+    def newCharacter(self):
+        self.player = GURPSCharacter()
+        self.player.loadCharacter(name = "New", header = True)
+        self.enterName()
+   
+
+    def enterName(self):
+        # enterName -> enterPoints -> editCharacter
+        n = Tk()
+        enterName = Entry(n)
+        enterName.insert(0, "Enter Name")
+        enterName.bind("<Button-1>", lambda x: enterName.delete(0, "end"))
+        enterName.grid(row = 0, column = 0, columnspan = 2)
+        cancel = Button(n, text = "Cancel", command = lambda: n.destroy())
+        cancel.grid(row = 1, column = 0)
+        # hack that button because .destroy() doesn't return True
+        okay = Button(n, text = "Ok", command = lambda: self.getName(enterName) and n.destroy())
+        okay.grid(row = 1, column = 1)
+        # run the popup to the topup
+        n.attributes('-topmost', True)
+
+    def getName(self, entry):
+        self.player.fluff["Name"][0] = entry.get()
+        self.enterPoints()
+        return True
+
+    def enterPoints(self):
+        n = Tk()
+        enterPoints = Entry(n)
+        enterPoints.insert(0, "Enter Points")
+        enterPoints.bind("<Button-1>", lambda x: enterPoints.delete(0, "end"))
+        enterPoints.grid(row = 0, column = 0, columnspan = 2)
+        cancel = Button(n, text = "Cancel", command = lambda: n.destroy())
+        cancel.grid(row = 1, column = 0)
+        # hack that button because .destroy() doesn't return True
+        okay = Button(n, text = "Ok", command = lambda: self.getPoints(enterPoints) and n.destroy())
+        okay.grid(row = 1, column = 1)
+        # run the popup to the topup
+        n.attributes('-topmost', True)
+
+    def getPoints(self, entry):
+        self.player.stat["POINTS"][0] = int(entry.get())
+        self.editCharacter()
+        return True
+        
 #begin window
 def runCWindow(Croot = None, character = None):
     app = CWindow(master=Croot, character = character)
@@ -130,6 +198,6 @@ def runCWindow(Croot = None, character = None):
 # test edit interface
 c = GURPSCharacter()
 c.loadCharacter(name = "test", header = True)
-c.saveCharacter(name = c.fluff["Name"][0])
+#c.saveCharacter(name = c.fluff["Name"][0])
 runCWindow(Tk(), c)
 
